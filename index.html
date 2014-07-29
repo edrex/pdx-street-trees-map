@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="demoapp">
+    <head>
+        <script src="lib/angular/angular.min.js"></script>
+        <script src="lib/leaflet-dist/leaflet.js"></script>
+        <script src="lib/angular-leaflet-directive/dist/angular-leaflet-directive.min.js"></script>
+        <link rel="stylesheet" href="lib/normalize.css/normalize.css" />
+        <link rel="stylesheet" href="lib/leaflet-dist/leaflet.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script>
+            angular.module("demoapp", ["leaflet-directive"]);
+            function DemoController($scope, $http) {
+                $http.get("data/trees_concordia.geo.json").success(function(data, status) {
+                    angular.extend($scope, {
+                        geojson: {
+                            data: data
+                        }
+                    });
+                });
+            };
+        </script>
+    </head>
+    <body ng-controller="DemoController">
+        <leaflet class="map" geojson="geojson">
+        </leaflet>
+    </body>
+</html>
