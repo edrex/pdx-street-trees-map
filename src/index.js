@@ -4,7 +4,7 @@ angular.module("street-trees")
     });
     $http.get("data/trees_concordia.geo.json").success(function(data, status) {
         $scope.geojson = {
-                data: data
+            data: data
         }
     });
 }]);

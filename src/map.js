@@ -22,7 +22,6 @@
         ],
         link: function (scope, element, attrs) {
           var map = new L.Map(element[0]);
-          map.setView([51.505, -0.09], 13);
           L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
               attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
               maxZoom: 18
