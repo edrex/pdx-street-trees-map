@@ -8,5 +8,8 @@ angular.module("street-trees", ["leaflet-directive"])
                 data: data
             }
         });
+        leafletData.getMap().then(function(map) {
+            map.fitBounds(L.geoJson(data).getBounds().pad(0.01));
+        });
     });
 }]);
