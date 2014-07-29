@@ -7,41 +7,39 @@ Explore the [Portland Street Trees](http://www.civicapps.org/datasets/street-tre
 Keep tooling as simple as possible.
 
  - No build step
- - Have to use Bower since angular-leaflet-directive isn't in a CDN
+ - Use CDN to avoid vendoring dependencies for gh_pages
 
 ## Iterations
 
- - Empty Leaflet page
- - Load + display geojson points
- - Basic metadata display
- - Allow filtering by attributes
- - Better metadata display
- - ...
+ - [x] Empty Leaflet page
+ - [ ] Fit map bounds to point data
+ - [ ] Load + display geojson points
+ - [ ] Basic metadata display
+ - [ ] Allow filtering by COMMON and HEALTH attributes
 
+### Nice to have
+
+ - [ ] Clustering
+ - [ ] Custom base layer
+ - [ ] Custom point icon(s?)
+ 
 ## Components
 
  - Leaflet
  - Angular
+ - normalize
 
 ### Likely
 
- - normalize
- - angular-leaflet-directive
  - https://github.com/localytics/angular-chosen
-
-## Tests
-
-## Stories
-
-As a user, I want to be able to filter displayed points by arbitrary metadata attributes so that I can find points of interest in a large data set.
+ - ~~angular-leaflet-directive~~
 
 
 ## Design
 
-Full page map
-Fit map bounds to point data
-Display selected point metadata
-Nice point icon (or per-species icons)
+ - Full page map
+ - Display selected point metadata
+ - Nice point icon (or per-species icons)
 
 ## References
 
