@@ -39,4 +39,10 @@ As a user, I want to be able to filter displayed points by arbitrary metadata at
 ## Design
 
 Full page map
+Fit map bounds to point data
+Display selected point metadata
 Nice point icon (or per-species icons)
+
+## References
+
+http://zevross.com/blog/2014/05/27/synchronize-leaflet-map-data-with-angularjs/
