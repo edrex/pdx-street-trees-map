@@ -4,7 +4,8 @@ angular.module("street-trees", ["street-trees.directives"])
     });
     $http.get("data/trees_concordia.geo.json").success(function(data, status) {
         $scope.geojson = {
-            data: data
+            data: data,
+            active: data.features[0]
         }
     });
 }]);
