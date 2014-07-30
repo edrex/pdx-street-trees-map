@@ -14,9 +14,13 @@ Keep tooling as simple as possible.
  - [x] Empty Leaflet page
  - [x] Fit map bounds to point data
  - [x] Load + display geojson points
- - [ ] On hover, item metadata is added to scope
- - [ ] Metadata is displayed
+ - [x] Display metadata for active item
+     + [x] mock out UI
+     + [x] live data
  - [ ] Allow filtering by COMMON and HEALTH attributes
+     + [x] mock out UI
+     + [ ] populate groups from data
+     + [ ] implement filter
 
 ## Tasks
 
@@ -36,12 +40,11 @@ Keep tooling as simple as possible.
  - Leaflet
  - Angular
  - normalize
-
-### Likely
-
  - https://github.com/localytics/angular-chosen
- - ~~angular-leaflet-directive~~
 
+### Dropped
+
+ - ~~angular-leaflet-directive~~
 
 ## Design
 
@@ -50,6 +53,10 @@ Keep tooling as simple as possible.
  - Use a single overlaid Chosen-style element for faceted filtering ([examples](https://github.com/localytics/angular-chosen/blob/master/example/index.html), [optgroup support](https://github.com/localytics/angular-chosen/issues/47)), [with nested data](https://groups.google.com/d/msg/angular/s7vyrvWQZgg/YCtfd_aAmEMJ)
  - Nice point icon (or per-species icons)
 
+## Retrospective
+
+ - Messaging might be a nice way to loosely couple components without sharing state
+ - angular-leaflet-directive is nice as a reference, but for more than basic maps it is enormously helpful to "own" the directive code
 
 ## References
 
