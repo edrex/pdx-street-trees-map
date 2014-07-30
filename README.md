@@ -47,7 +47,7 @@ Keep tooling as simple as possible.
 
  - Full page map
  - On hover, display metadata for active point in an absolutely positioned metadata area over map (pointer-events: none; opacity: 0.6)
- - Use a single overlaid Chosen-style element for faceted filtering
+ - Use a single overlaid Chosen-style element for faceted filtering ([examples](https://github.com/localytics/angular-chosen/blob/master/example/index.html), [optgroup support](https://github.com/localytics/angular-chosen/issues/47)), [with nested data](https://groups.google.com/d/msg/angular/s7vyrvWQZgg/YCtfd_aAmEMJ)
  - Nice point icon (or per-species icons)
 
 

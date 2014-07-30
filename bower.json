@@ -4,6 +4,8 @@
   "dependencies": {
     "leaflet": "~0.7.3",
     "angular": "~1.2.21",
-    "normalize.css": "~3.0.1"
+    "normalize.css": "~3.0.1",
+    "angular-chosen-localytics": "~1.0.6",
+    "jquery": "~2.1.1"
   }
 }

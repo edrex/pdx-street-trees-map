@@ -34,3 +34,11 @@ body {
 .metadata dl {
     margin: 10px;
 }
+
+.chosen-container {
+    position: absolute;
+    left: 46px;
+    top: 10px;
+    /*width: 220px;    */
+    box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+}

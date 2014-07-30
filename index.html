@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html ng-app="street-trees">
     <head>
+        <script src="lib/jquery/dist/jquery.min.js"></script>
         <script src="lib/angular/angular.js"></script>
         <script src="lib/leaflet/dist/leaflet-src.js"></script>
+        <script src="lib/chosen/chosen.jquery.js"></script>
+        <script src="lib/angular-chosen-localytics/chosen.js"></script>
         <script src="src/directives.js"></script>
         <script src="src/index.js"></script>
         <link rel="stylesheet" href="lib/normalize.css/normalize.css" />
         <link rel="stylesheet" href="lib/leaflet/dist/leaflet.css" />
+        <link rel="stylesheet" href="lib/chosen/chosen.min.css" />
         <link rel="stylesheet" href="style.css" />
     </head>
     <body ng-controller="MainController">
@@ -18,5 +22,15 @@
                 <dd ng-repeat-end>{{v}}</dd>
             </dl>
         </div>
+        <select
+            id="filters"
+            multiple
+            ng-model="geojson.active_filters"
+            ng-options="item.value group by item.group for item in geojson.filters"
+            data-placeholder="Filter by..."
+            style="width:200px;"
+            chosen>
+            <option>Filters...</option>
+        </select>
     </body>
 </html>
