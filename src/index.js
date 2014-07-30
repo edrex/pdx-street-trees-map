@@ -7,10 +7,10 @@ angular.module("street-trees", ["street-trees.directives", 'localytics.directive
             data: data,
             active: data.features[0],
             filters: [
-                {value: 'C:Oak', group: 'COMMON'},
-                {value: 'C:Cedar', group: 'COMMON'},
-                {value: 'H:Good', group: 'HEALTH'},
-                {value: 'H:Poor', group: 'HEALTH'}
+                {value: 'Oak', group: 'COMMON'},
+                {value: 'Cedar', group: 'COMMON'},
+                {value: 'Good', group: 'HEALTH'},
+                {value: 'Poor', group: 'HEALTH'}
             ],
             active_filters: []
         }
