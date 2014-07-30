@@ -3,14 +3,25 @@ angular.module("street-trees", ["street-trees.directives", 'localytics.directive
     angular.extend($scope, {
     });
     $http.get("data/trees_concordia.geo.json").success(function(data, status) {
+        var groups = ['HEALTH', 'COMMON'];
+        var counts = _.map(groups, function(group) {
+            return _.countBy(data.features, function(d){
+                return d.properties[group]
+            })
+        })
+        var filters = []
+        for (var i = 0; i < groups.length; i++) {
+            for (var v in counts[i]) {
+                filters.push({
+                    value: v,
+                    label: v + ' (' + counts[i][v] + ')',
+                    group: groups[i]
+                })
+            }
+        }
         $scope.geojson = {
             data: data,
-            filters: [
-                {value: 'Oak', group: 'COMMON'},
-                {value: 'Cedar', group: 'COMMON'},
-                {value: 'Good', group: 'HEALTH'},
-                {value: 'Poor', group: 'HEALTH'}
-            ],
+            filters: filters,
             active_filters: []
         }
     });
