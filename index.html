@@ -14,10 +14,9 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body ng-controller="MainController">
-        <map class="map" geojson="geojson">
-        </map>
-        <div class="metadata">
-            <dl ng-show="geojson.active">
+        <map class="map" geojson="geojson"></map>
+        <div class="metadata" ng-show="geojson.active">
+            <dl>
                 <dt ng-repeat-start="(k,v) in geojson.active.properties">{{k}}</dt>
                 <dd ng-repeat-end>{{v}}</dd>
             </dl>
