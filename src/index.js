@@ -5,7 +5,6 @@ angular.module("street-trees", ["street-trees.directives", 'localytics.directive
     $http.get("data/trees_concordia.geo.json").success(function(data, status) {
         $scope.geojson = {
             data: data,
-            active: data.features[0],
             filters: [
                 {value: 'Oak', group: 'COMMON'},
                 {value: 'Cedar', group: 'COMMON'},

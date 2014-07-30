@@ -37,12 +37,11 @@
                         layer.on({
                             mouseover: function(e) {
                                 scope.$apply(function() {
-                                    scope.geojson.selected = feature;
-                                    // $rootScope.$broadcast('map.geojsonMouseover', e);
+                                    scope.geojson.active = feature;
                                 });
+
                             },
                             mouseout: function(e) {
-                                leafletGeoJSON.resetStyle(e.target);
                             }
                         });
                     };
@@ -57,7 +56,8 @@
                         }
 
                         leafletGeoJSON = L.geoJson(geojson.data, {
-                            onEachFeature: onEachFeature
+                            onEachFeature: onEachFeature,
+                            resetStyleOnMouseout: true
                         });
 
                         map.fitBounds(leafletGeoJSON.getBounds().pad(0.01));
