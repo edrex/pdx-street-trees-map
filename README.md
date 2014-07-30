@@ -7,15 +7,23 @@ Explore the [Portland Street Trees](http://www.civicapps.org/datasets/street-tre
 Keep tooling as simple as possible.
 
  - No build step
- - Use CDN to avoid vendoring dependencies for gh_pages
+ - Use CDN to avoid vendoring dependencies for gh-pages
 
 ## Iterations
 
  - [x] Empty Leaflet page
- - [ ] Fit map bounds to point data
- - [ ] Load + display geojson points
- - [ ] Basic metadata display
+ - [x] Fit map bounds to point data
+ - [x] Load + display geojson points
+ - [ ] On hover, item metadata is added to scope
+ - [ ] Metadata is displayed
  - [ ] Allow filtering by COMMON and HEALTH attributes
+
+## Tasks
+
+ - [x] Go back to bower deps (needed for test setup)
+ - [x] vendor libs/ for gh-pages
+ - [ ] add karma/jasmine unit tests
+ - [ ] add protractor/jasmine e2e tests
 
 ### Nice to have
 
@@ -38,9 +46,11 @@ Keep tooling as simple as possible.
 ## Design
 
  - Full page map
- - Display selected point metadata
+ - On hover, display metadata for active point in an absolutely positioned metadata area over map (pointer-events: none; opacity: 0.6)
+ - Use a single overlaid Chosen-style element for faceted filtering
  - Nice point icon (or per-species icons)
+
 
 ## References
 
-http://zevross.com/blog/2014/05/27/synchronize-leaflet-map-data-with-angularjs/
+http://css-tricks.com/snippets/css/a-guide-to-flexbox/
