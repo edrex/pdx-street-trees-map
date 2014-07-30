@@ -53,9 +53,9 @@
                             map.removeLayer(leafletGeoJSON);
                         }
 
-                        var filteredData = _.clone(scope.geojson.data);
+                        scope.geojson.filteredData = _.clone(scope.geojson.data);
                         var groups = _.groupBy(scope.geojson.active_filters, 'group');
-                        filteredData.features = _.filter(scope.geojson.data.features, function(d) {
+                        scope.geojson.filteredData.features = _.filter(scope.geojson.data.features, function(d) {
                             for (var g in groups) {
                                 if (! (_.some(groups[g], function(filter) {
                                     return d.properties[g] === filter.value;
@@ -66,7 +66,7 @@
                             return true;
                         })
 
-                        leafletGeoJSON = L.geoJson(filteredData, {
+                        leafletGeoJSON = L.geoJson(scope.geojson.filteredData, {
                             onEachFeature: onEachFeature,
                             resetStyleOnMouseout: true
                         });
