@@ -1,6 +1,9 @@
 angular.module("street-trees", ["street-trees.directives", 'localytics.directives'])
 .controller("MainController", ["$scope", "$http", "$log", function ($scope, $http, $log, leafletData) {
     angular.extend($scope, {
+        geojson: {
+            active_filters: []
+        }
     });
     $http.get("data/trees_concordia.geo.json").success(function(data, status) {
         var groups = ['HEALTH', 'COMMON'];
@@ -19,10 +22,9 @@ angular.module("street-trees", ["street-trees.directives", 'localytics.directive
                 })
             }
         }
-        $scope.geojson = {
+        angular.extend($scope.geojson, {
             data: data,
-            filters: filters,
-            active_filters: []
-        }
+            filters: filters
+        })
     });
 }]);
