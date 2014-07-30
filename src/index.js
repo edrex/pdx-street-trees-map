@@ -1,11 +1,12 @@
 angular.module("street-trees", ["street-trees.directives", 'localytics.directives'])
-    .controller("MainController", ["$scope", "$http", "$log", function ($scope, $http, $log, leafletData) {
+    .constant('dataUrl', 'data/trees_concordia.geo.json')
+    .controller("MainController", ["$scope", "$http", "$log", "dataUrl", function ($scope, $http, $log, dataUrl) {
         angular.extend($scope, {
             geojson: {
                 active_filters: []
             }
         });
-        $http.get("data/trees_concordia.geo.json").success(function(data, status) {
+        $http.get(dataUrl).success(function(data, status) {
             var groups = ['HEALTH', 'COMMON'];
             var counts = _.map(groups, function(group) {
                 return _.countBy(data.features, function(d){
