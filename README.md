@@ -9,6 +9,13 @@ Keep tooling as simple as possible.
  - No build step
  - Use CDN to avoid vendoring dependencies for gh-pages
 
+## Components
+
+ - Leaflet
+ - Angular
+ - normalize
+ - [Chosen](http://harvesthq.github.io/chosen/) with [angular-chosen](https://github.com/localytics/angular-chosen)
+
 ## Iterations
 
  - [x] Empty Leaflet page
@@ -17,10 +24,16 @@ Keep tooling as simple as possible.
  - [x] Display metadata for active item
      + [x] mock out UI
      + [x] live data
- - [ ] Allow filtering by COMMON and HEALTH attributes
+ - [x] Allow filtering by COMMON and HEALTH attributes
      + [x] mock out UI
-     + [ ] populate groups from data
-     + [ ] implement filter
+     + [x] populate groups from data
+     + [x] implement filter
+
+### Nice to have
+
+ - [ ] Custom base layer
+ - [ ] Custom point icon(s?)
+ - [ ] Clustering?
 
 ## Tasks
 
@@ -29,28 +42,16 @@ Keep tooling as simple as possible.
  - [ ] add karma/jasmine unit tests
  - [ ] add protractor/jasmine e2e tests
 
-### Nice to have
+### Refactor Wishlist
 
- - [ ] Clustering
- - [ ] Custom base layer
- - [ ] Custom point icon(s?)
+ - [ ] make geojson.data, filters, active_filters, and filteredData services (improve testability and encapsulation)
+ - [ ] test filtering (this is the most complicated part of the app)
  
-## Components
-
- - Leaflet
- - Angular
- - normalize
- - https://github.com/localytics/angular-chosen
-
-### Dropped
-
- - ~~angular-leaflet-directive~~
-
 ## Design
 
  - Full page map
- - On hover, display metadata for active point in an absolutely positioned metadata area over map (pointer-events: none; opacity: 0.6)
- - Use a single overlaid Chosen-style element for faceted filtering ([examples](https://github.com/localytics/angular-chosen/blob/master/example/index.html), [optgroup support](https://github.com/localytics/angular-chosen/issues/47)), [with nested data](https://groups.google.com/d/msg/angular/s7vyrvWQZgg/YCtfd_aAmEMJ)
+ - On hover, display metadata for active point in an absolutely positioned metadata area over map
+ - Use a single overlaid Chosen-style select element for faceted filtering ([examples](https://github.com/localytics/angular-chosen/blob/master/example/index.html), [optgroup support](https://github.com/localytics/angular-chosen/issues/47)), [with nested data](https://groups.google.com/d/msg/angular/s7vyrvWQZgg/YCtfd_aAmEMJ)
  - Nice point icon (or per-species icons)
 
 ## Retrospective
