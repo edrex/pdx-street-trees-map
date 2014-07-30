@@ -1,4 +1,4 @@
-angular.module("street-trees")
+angular.module("street-trees", ["street-trees.directives"])
 .controller("MainController", ["$scope", "$http", "$log", function ($scope, $http, $log, leafletData) {
     angular.extend($scope, {
     });

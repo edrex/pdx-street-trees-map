@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('street-trees', []).directive('map', [
+    angular.module('street-trees.directives', []).directive('map', [
         '$q',
         function($q) {
             var _leafletMap;
