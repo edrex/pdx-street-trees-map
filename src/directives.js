@@ -86,7 +86,6 @@
                         if (!(angular.isDefined(active_filters))) {
                             return;
                         }
-
                         updateGeoJSON();
                     });
 
